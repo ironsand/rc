@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+  <head>
+
+    <title>岡三オンライン証券</title>
+    <link rel="shortcut icon" href="https://member.okasan-online.co.jp/static_contents/web/favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+    
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <style type="text/css" media="all">
+      @import "https://member.okasan-online.co.jp/static_contents/web/css/call.css";
+      @import "https://cds.okasan-online.rich-direct.jp/cds/user_contents/web/css/call_custom.css";
+    </style>
+    <script type="text/javascript" src="https://member.okasan-online.co.jp/static_contents/web/js/scripts.js"></script>
+    <script type="text/javascript" src="https://member.okasan-online.co.jp/static_contents/web/js/common.js"></script>
+
+
+    <script type="text/javascript" src="https://member.okasan-online.co.jp/static_contents/web/js/trd.js"></script>
+
+
+  </head>
+
+  <body id="default">
+    <div id="area">
+
+      <div id="header">
+
+
+
+	<table id="headset" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td id="logofield"><h1 id="logo"><a href="javascript:void(0)" onclick="ShowHomePage('http://www.okasan-online.co.jp/')">&nbsp;</a>
+	      </h1></td>
+
+
+
+
+
+
+
+
+
+
+	    <td id="gmenufield">
+	      <div id="gmenubox">
+		<table id="globalmenu" cellspacing="0" cellpadding="0">
+		  <tr>
+
+
+
+
+
+
+		    <td id="gmenu_top">
+
+
+
+		      <a href="/web/cmnGenInvTopAction.do" title="トップ"><span>トップ</span></a></td>
+
+
+
+
+
+
+		    <td id="gmenu_invest">
+
+
+
+		      <a href="/web/infGenInvI01Action.do" title="投資情報"><span>投資情報</span></a></td>
+
+
+		    <td id="gmenu_dealing" class="on">
+
+
+		      <a href="/web/trdStkActSchInitAction.do" title="取引"><span>取引</span></a></td>
+
+
+
+
+
+
+		    <td id="gmenu_prop">
+
+
+
+		      <a href="/web/astAdpAdpLstSummaryAction.do" title="資産状況"><span>資産状況</span></a></td>
+
+
+
+
+		   
+
+
+		    <td id="gmenu_money">
+
+
+
+		      <a href="/web/accDepDepIndSelectAction.do" title="入出金・振替"><span>入出金・振替</span></a></td>
+
+
+
+
+
+
+		    <td id="gmenu_stock">
+
+
+
+		      <a href="/web/actCusRegLstAction.do" title="口座情報"><span>口座情報</span></a></td>
+
+		  </tr>
+		</table>
+	      </div>
+	    </td>
+
+
+	    <td id="navifield">
+	      <div id="fontsizebox">
+		<table id="fontsizemenu" cellspacing="0" cellpadding="0">
+		  <tr>
+		    <td id="size_small"><a href="javascript:cgfont('small');">小</a></td>
+		    <td id="size_middle"><a href="javascript:cgfont('default');">中</a></td>
+		    <td id="size_big"><a href="javascript:cgfont('large');">大</a></td>
+		    <td><div class="btn_logout"><a href="/web/cmnCauSysLgoAction.do">ログアウト</a></div></td>
+		  </tr>
+		</table>
+	      </div>
+
+	      <div id="navibox">
+		<table id="navimenu" cellspacing="0" cellpadding="0">
+		  <tr>
+		    <td id="navi_sitemap">
+		      <a href="javascript:void(0)" title="サイトマップ" onclick="ShowSubWindow('https://cds.okasan-online.rich-direct.jp/cds/user_contents/web/html/tilehead_sitemap.html')"><span>サイトマップ</span></a></td>
+		    <td id="navi_faq">
+		      <a href="javascript:void(0)" title="FAQ" onclick="ShowSubWindow('https://cds.okasan-online.rich-direct.jp/cds/user_contents/web/html/tilehead_faq.html')"><span>FAQ</span></a></td>
+		    <td id="navi_help">
+		      <a href="javascript:void(0)" title="ヘルプ" onclick="ShowSubWindow('https://cds.okasan-online.rich-direct.jp/cds/user_contents/web/html/tilehead_help.html')"><span>ヘルプ</span></a></td>
+		  </tr>
+		</table>
+	      </div>
+	    </td>
+	  </tr>
+	</table>
+
+
+
+
+
+
+	<table id="headcontent" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td class="maincenter">
+	      <table id="message" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+		  <td class="kadoltop"><span class="dispout">&nbsp;</span></td>
+		  <td class="linetop" colspan="2"><span class="dispout">&nbsp;</span></td>
+		  <td class="kadortop"><span class="dispout">&nbsp;</span></td>
+		</tr>
+		<tr>
+		  <td class="lineleft"><span class="dispout">&nbsp;</span></td>
+		  <td class="messagefield">
+		    <table class="tbl_message" cellspacing="0" cellpadding="0">
+		      <tr>
+			<td>
+
+			  <span class="post">&nbsp;</span>未読:<span class="txt_bold">0件
+			  </span></td>
+
+
+
+
+
+
+		      </tr>
+		    </table>
+		  </td>
+		  <td class="message_allfield">
+		    <span class="message_all">&nbsp;</span><a href="/web/cmnCusMsgLstInitAction.do?mdkKdkKbn=_ALL&msgYusnKbn=_ALL">全件</a>
+		  </td>
+		  <td class="lineright"><span class="dispout">&nbsp;</span></td>
+		</tr>
+		<tr>
+		  <td class="kadolbottom"><span class="dispout">&nbsp;</span></td>
+		  <td class="linebottom" colspan="2"><span class="dispout">&nbsp;</span></td>
+		  <td class="kadorbottom"><span class="dispout">&nbsp;</span></td>
+		</tr>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+
+
+
+
+      </div>
+
+
+
+      <table id="mainarea" cellspacing="0" cellpadding="0">
+	<tr>
+
+	  <td class="mainleft">
+	    <table id="localmenu_sidearea" cellspacing="0" cellpadding="0">
+	      <tr>
+		<td class="kadoltop"><span class="dispout">&nbsp;</span></td>
+		<td class="linetop"><span class="dispout">&nbsp;</span></td>
+		<td class="kadortop"><span class="dispout">&nbsp;</span></td>
+	      </tr>
+	      <tr>
+		<td class="lineleft"><span class="dispout">&nbsp;</span></td>
+		<td>
+
+
+
+
+		  <form name="infStkDesSchForm" method="post" action="/web/infStkDesSchAction.do" onsubmit="return false"><input type="hidden" name="WZX_ENV_LOGIN_TUSK_RYUSHU_ID" value="933a6aa563678ff14a107ae93297864a"/>
+
+		    <input type="hidden" name="sentkTrhkSjuKbn" value="YUUSEN" />
+		    <table id="search">
+		      <tr>
+			<td>
+			  <table id="searchbox" cellspacing="0" cellpadding="0">
+			    <tr>
+			      <td><input type="text" name="gmnyuMigrNyuryk" maxlength="15" size="15" value="" onkeydown="ShowHrefByEnter('/web/infStkDesSchInitAction.do','forms[0].gmnyuMigrNyuryk')" class="txtinput" /></td>
+			      <td><input type="image" name="buttonSearch" src="https://member.okasan-online.co.jp/static_contents/web/images/header/btn_search.gif" value="銘柄検索" onclick="ShowHref('/web/infStkDesSchInitAction.do','forms[0].gmnyuMigrNyuryk')" alt="銘柄検索" /></td>
+			    </tr>
+			    <tr>
+			      <td colspan="2">
+				<input type="image" name="buttonSearch" src="https://member.okasan-online.co.jp/static_contents/web/images/header/btn_brd_sea.gif" value="銘柄情報を別ウィンドウで開く" onclick="searchPopup('forms[0].gmnyuMigrNyuryk')" alt="銘柄情報を別ウィンドウで開く" />
+			      </td>
+			    </tr>
+			  </table>
+			</td>
+		      </tr>
+		    </table>
+		  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		  <div id="smenu_TrdStk" class="on">
+		    <a href="/web/trdStkActSchInitAction.do" title="国内株式"><span class="categoryname">国内株式</span></a></div>
+
+
+
+
+		  <table id="side_submenutbl" cellspacing="0" cellpadding="0">
+
+		    <tr>
+
+		      <td>
+			<a href="/web/trdStkActSchInitAction.do" title="現物注文">現物注文</a>
+
+
+			<ul class="childmenu">
+
+
+
+
+			  <li>
+
+			    <a href="/web/trdStkActSchInitAction.do" title="買う">買う</a></li>
+
+
+			  <li class="on">
+
+
+
+			    <a href="/web/trdStkActLstAction.do" title="売る">売る</a></li>
+
+			</ul>
+		      </td>
+
+
+		    </tr>
+
+		    <tr>
+
+		      <td>
+			<a href="/web/trdStkMgnSchInitAction.do" title="信用注文">信用注文</a>
+
+
+			<ul class="childmenu">
+
+
+
+
+			  <li>
+
+			    <a href="/web/trdStkMgnSchInitAction.do" title="新規">新規</a></li>
+
+
+
+			  <li class="end">
+
+
+			    <a href="/web/trdStkMgnLstSummaryAction.do" title="返済・現引・現渡">返済・現引・現渡</a></li>
+
+			</ul>
+		      </td>
+
+
+		    </tr>
+
+		    <tr>
+
+		      <td>
+			<a href="/web/trdStkOddSchInitAction.do" title="単元未満株注文">単元未満株注文</a>
+
+
+			<ul class="childmenu">
+
+
+
+
+			  <li>
+
+			    <a href="/web/trdStkOddSchInitAction.do" title="買う">買う</a></li>
+
+
+
+			  <li class="end">
+
+
+			    <a href="/web/trdStkOddLstAction.do" title="売る">売る</a></li>
+
+			</ul>
+		      </td>
+
+
+		    </tr>
+
+		    <tr>
+
+
+
+
+
+
+		      <td>
+
+			<a href="/web/trdStkIpoLstAction.do" title="IPO/PO注文">IPO/PO注文</a></td>
+
+		    </tr>
+
+		    <tr>
+
+
+
+
+
+
+		      <td>
+
+			<a href="/web/trdStkOdrLstAction.do" title="注文照会">注文照会</a></td>
+
+		    </tr>
+
+		    <tr>
+
+
+
+
+
+
+		      <td>
+
+			<a href="/web/trdStkStkLstAction.do" title="注文取消・訂正">注文取消・訂正</a></td>
+
+		    </tr>
+
+		  </table>
+
+
+
+
+		  <div id="smenu_TrdDfd">
+		    <a href="/web/trdDfdDesSchInitAction.do" title="国内投資信託"><span class="categoryname">国内投資信託</span></a></div>
+
+
+
+
+		  <div id="smenu_TrdFop">
+		    <a href="/web/trdFopInvTopAction.do" title="先物・オプション"><span class="categoryname">先物・オプション</span></a></div>
+
+
+
+
+
+
+
+
+		</td>
+		<td class="lineright"><span class="dispout">&nbsp;</span></td>
+	      </tr>
+	      <tr>
+		<td class="kadolbottom"><span class="dispout">&nbsp;</span></td>
+		<td class="linebottom"><span class="dispout">&nbsp;</span></td>
+		<td class="kadorbottom"><span class="dispout">&nbsp;</span></td>
+	      </tr>
+	    </table>
+	  </td>
+
+
+	  <td class="maincenter">
+
+
+	    <table id="contentsarea" cellspacing="0" cellpadding="0">
+	      <tr>
+		<td class="kadoltop"><span class="dispout">&nbsp;</span></td>
+		<td class="linetop"><span class="dispout">&nbsp;</span></td>
+		<td class="kadortop"><span class="dispout">&nbsp;</span></td>
+	      </tr>
+	      <tr>
+
+		<td class="lineleft_height"><span class="dispout">&nbsp;</span></td>
+		<td class="contentscenter">
+
+
+
+
+
+
+
+
+		  <div id="acctile">
+		    <div id="userspecblock">
+
+
+		      <table class="tbl_userstatus" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+			  <td colspan="2">
+
+			    <div class="banknum">203-546356&nbsp;楊　成光様
+			    </div>
+
+			  </td>
+			  <td colspan="2" class="align_R"><span class="datime">2014/03/18 17:31:10 現在</span></td>
+			</tr>
+			<tr>
+
+			  <td nowrap="nowrap">
+			    <div class="limit">4,563,643円
+			    </div>
+			  </td>
+
+
+			  <td nowrap="nowrap">
+			    <div class="amount">4,563,643円
+			    </div>
+			  </td>
+
+
+
+
+			  <td nowrap="nowrap">
+			    <div class="build">17,749,450円
+			    </div>
+			  </td>
+
+
+
+
+
+			  <td nowrap="nowrap">
+			    <div class="maint">--%
+			    </div>
+			  </td>
+
+
+			</tr>
+		      </table>
+
+		    </div>
+		  </div>
+
+
+
+
+
+
+		  <div id="titletile">
+		    <div id="pageinfoblock">
+		      <table class="tbl_info" cellspacing="0" cellpadding="0">
+			<tr>
+			  <td class="pagetitlefield">
+
+			    <h2 class="inside_name">国内株式</h2>
+
+			    <h3 class="function_name">現物売注文</h3>
+			  </td>
+			  <td class="stepfield">
+			    <div class="callbox">&nbsp;</div>
+
+
+			    <div class="step_trdstkactlst">&nbsp;</div>
+
+			  </td>
+			  <td class="userhelpfield">
+			    <div class="btnicon_info">
+			      <a href="javascript:void(0)" onclick="ShowSubWindow('https://cds.okasan-online.rich-direct.jp/cds/user_contents/web/html/tilettl_out_icon.html')">&nbsp;</a>
+			    </div>
+
+
+
+
+
+
+			    <div class="btnhelp">
+			      <a  title="画面ヘルプ" href="#" onclick="javascript:window.open('https://cds.okasan-online.rich-direct.jp/cds/user_contents/web/html/tilettl_help_trdstkactlst_desc.html?auth=B6C1266CF778A4F412F5BC872B075C23','new','menubar=yes,resizable=yes,scrollbars=yes,toolbar=yes');"  >画面ヘルプ</a>
+			    </div>
+
+			  </td>
+			</tr>
+		      </table>
+		    </div>
+		  </div>
+
+
+
+
+
+
+
+		  <div id="errtile">
+
+		  </div>
+
+
+
+
+
+		  <div id="tiles.TrdStkActLst">
+
+
+		    <div id="maintile">
+		      <form name="trdStkActLstForm" method="post" action="/web/trdStkActLstAction.do"><input type="hidden" name="WZX_ENV_LOGIN_TUSK_RYUSHU_ID" value="933a6aa563678ff14a107ae93297864a"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="separate_M">&nbsp;</div>
+
+
+
+
+
+
+
+
+			<div id="TrdStkActLstTokuteiTable_block">
+
+			  <h6 class="blocktitle">特定預り</h6>
+
+			  <div class="separate_S">&nbsp;</div>
+
+			  <table class="tbl_dataOutputloop_02" cellspacing="0" cellpadding="0">
+			    <tr>
+			      <th nowrap="nowrap">
+				<span class="active">&nbsp;&nbsp;銘柄&nbsp;&nbsp;</span>
+				<div class="align_C">
+				  <table class="tbl_inner" cellspacing="0" cellpadding="0">
+				    <tr>
+				      <td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div class="sortbtn_up_b">
+					  <a href="trdStkActLstAction.do?sortKey=MCA" title="昇順"></a>
+					</div>
+
+
+
+
+
+
+
+				      </td>
+				      <td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div class="sortbtn_down_w">
+					  <a href="trdStkActLstAction.do?sortKey=MCD" title="降順"></a>
+					</div>
+
+
+
+
+				      </td>
+				    </tr>
+				  </table>
+				</div>
+			      </th>
+			      <th nowrap="nowrap">保有数量<br/>(売却注文中)</th>
+			      <th nowrap="nowrap">売却可能数量</th>
+			      <th nowrap="nowrap">平均取得単価<br/>現在値</th>
+			      <th nowrap="nowrap">取得金額<br/>評価額</th>
+			      <th nowrap="nowrap">
+				評価損益
+				<div class="align_C">
+				  <table class="tbl_inner" cellspacing="0" cellpadding="0">
+				    <tr>
+				      <td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div class="sortbtn_up_w">
+					  <a href="trdStkActLstAction.do?sortKey=HKA" title="昇順"></a>
+					</div>
+
+
+
+
+
+
+				      </td>
+				      <td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div class="sortbtn_down_w">
+					  <a href="trdStkActLstAction.do?sortKey=HKD" title="降順"></a>
+					</div>
+
+
+
+
+				      </td>
+				    </tr>
+				  </table>
+				</div>
+				評価損益(%)
+				<div class="align_C">
+				  <table class="tbl_inner" cellspacing="0" cellpadding="0">
+				    <tr>
+				      <td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div class="sortbtn_up_w">
+					  <a href="trdStkActLstAction.do?sortKey=HRA" title="昇順"></a>
+					</div>
+
+
+
+
+
+
+				      </td>
+				      <td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div class="sortbtn_down_w">
+					  <a href="trdStkActLstAction.do?sortKey=HRD" title="降順"></a>
+					</div>
+
+
+
+
+				      </td>
+				    </tr>
+				  </table>
+				</div>
+
+			      </th>
+			      <th nowrap="nowrap" class="trd_size">取引</th>
+			    </tr>
+
+
+
+
+			    <tr>
+
+
+
+			      <td>
+				1722<br/>
+
+				<a href="/web/infStkDesSchLstAction.do?trhkSjuKbn=YUUSEN&amp;migrCd=1722">ミサワホーム</a>
+
+			      </td>
+
+			      <td class="align_R">
+				100<br
+				      />(100)
+
+			      </td>
+
+
+
+			      <td class="align_R" nowrap="nowrap">
+
+				--<span class="tanmi_none">　</span>
+			      </td>
+			      <td class="align_R">
+				<table class="tbl_inner1" cellspacing="0" cellpadding="0">
+				  <tr>
+				    <td class="align_R" nowrap="nowrap">1,272</td>
+				    <td class="thick_normal">&nbsp;&nbsp;</td>
+				  </tr>
+				  <tr>
+				    <td class="align_R">1,287</td>
+				    <td class="thick_normal" nowrap="nowrap">&nbsp;</td>
+				  </tr>
+				</table>
+			      </td>
+			      <td class="align_R">
+				127,200<br/>128,700
+			      </td>
+			      <td class="align_R" nowrap="nowrap">
+				<span class="valueplus"
+				      >+1,500</span><br
+						       /><span class="valueplus"
+							       >+1.17</span>%
+
+			      </td>
+			      <td class="trd_size">
+
+
+
+
+
+
+
+				&nbsp;
+
+
+			      </td>
+			    </tr>
+
+
+
+
+
+			    <tr class="colorline">
+
+			      <td>
+				6059<br/>
+
+				<a href="/web/infStkDesSchLstAction.do?trhkSjuKbn=YUUSEN&amp;migrCd=6059">ウチヤマホールディングス</a>
+
+			      </td>
+
+			      <td class="align_R">
+				100
+			      </td>
+
+
+
+			      <td class="align_R" nowrap="nowrap">
+				100<span class="tanmi_none">　</span>
+
+			      </td>
+			      <td class="align_R">
+				<table class="tbl_inner1" cellspacing="0" cellpadding="0">
+				  <tr>
+				    <td class="align_R" nowrap="nowrap">667</td>
+				    <td class="thick_normal">&nbsp;&nbsp;</td>
+				  </tr>
+				  <tr>
+				    <td class="align_R">611</td>
+				    <td class="thick_normal" nowrap="nowrap">&nbsp;</td>
+				  </tr>
+				</table>
+			      </td>
+			      <td class="align_R">
+				66,700<br/>61,100
+			      </td>
+			      <td class="align_R" nowrap="nowrap">
+				<span class="valueminus"
+				      >-5,600</span><br
+						       /><span class="valueminus"
+							       >-8.39</span>%
+
+			      </td>
+			      <td class="trd_size">
+
+
+
+				<div class="minibtn_trdstksell">
+				  <a href="/web/trdStkActSelInputAction.do?trhkSjuKbn=YUUSEN&tktiazkrKbn=TOKUTEI&amp;migrCd=6059" title="現物売">現物売</a>
+				</div>
+
+
+
+
+
+
+			      </td>
+			    </tr>
+
+
+
+			    <tr>
+
+
+
+			      <td>
+				9639<br/>
+
+				<a href="/web/infStkDesSchLstAction.do?trhkSjuKbn=YUUSEN&amp;migrCd=9639">三協フロンテア</a>
+
+			      </td>
+
+			      <td class="align_R">
+				1,000<br
+					/>(1,000)
+
+			      </td>
+
+
+
+			      <td class="align_R" nowrap="nowrap">
+
+				--<span class="tanmi_none">　</span>
+			      </td>
+			      <td class="align_R">
+				<table class="tbl_inner1" cellspacing="0" cellpadding="0">
+				  <tr>
+				    <td class="align_R" nowrap="nowrap">741</td>
+				    <td class="thick_normal">&nbsp;&nbsp;</td>
+				  </tr>
+				  <tr>
+				    <td class="align_R">750</td>
+				    <td class="thick_normal" nowrap="nowrap">&nbsp;</td>
+				  </tr>
+				</table>
+			      </td>
+			      <td class="align_R">
+				741,000<br/>750,000
+			      </td>
+			      <td class="align_R" nowrap="nowrap">
+				<span class="valueplus"
+				      >+9,000</span><br
+						       /><span class="valueplus"
+							       >+1.21</span>%
+
+			      </td>
+			      <td class="trd_size">
+
+
+
+
+
+
+
+				&nbsp;
+
+
+			      </td>
+			    </tr>
+
+
+
+			    <tr>
+			      <th colspan="4" class="aftersumth" nowrap="nowrap">評価合計</th>
+			      <td class="align_R">
+				934,900<br
+					  />939,800
+			      </td>
+			      <td class="align_R" nowrap="nowrap">
+				<span class="valueplus"
+				      >+4,900</span><br
+						       /><span class="valueplus"
+							       >+0.52</span>%
+
+			      </td>
+			      <td class="trd_size">&nbsp;</td>
+			    </tr>
+
+			  </table>
+
+			</div>
+			<div class="separate_L">&nbsp;</div>
+
+
+
+
+
+
+
+
+			<div class="separate_L">&nbsp;</div>
+
+			<div class="separate_L">&nbsp;</div>
+
+
+		      </form>
+		    </div>
+
+		  </div>
+
+
+
+		</td>
+		<td class="lineright"><span class="dispout">&nbsp;</span></td>
+	      </tr>
+	      <tr>
+		<td class="lineleft"><span class="dispout">&nbsp;</span></td>
+		<td class="navigateline">
+
+
+
+
+
+		  <div id="pankztile">
+		    <table class="navigate" cellspacing="0" cellpadding="0">
+		      <tr>
+			<td class="pankzbox">
+
+			  <div class="pankz">
+			    <a href="/web/cmnGenInvTopAction.do">トップ</a>&nbsp;&gt;&nbsp;<a href="/web/trdStkActSchInitAction.do">取引</a>&nbsp;&gt;&nbsp;<a href="/web/trdStkActSchInitAction.do">国内株式</a>&nbsp;&gt;&nbsp;<a href="/web/trdStkActSchInitAction.do">現物注文</a>&nbsp;&gt;&nbsp;<a href="/web/trdStkActLstAction.do">売る</a>
+			  </div>
+
+
+			</td>
+			<td><div class="btntop"><a href="#" title="ページのトップへもどる">ページのトップへもどる</a></div></td>
+		      </tr>
+		    </table>
+		  </div>
+
+
+
+
+		</td>
+		<td class="lineright"><span class="dispout">&nbsp;</span></td>
+	      </tr>
+	      <tr>
+		<td class="kadolbottom"><span class="dispout">&nbsp;</span></td>
+		<td class="linebottom"><span class="dispout">&nbsp;</span></td>
+		<td class="kadorbottom"><span class="dispout">&nbsp;</span></td>
+	      </tr>
+	    </table>
+
+	  </td>
+	</tr>
+      </table>
+
+
+
+
+      <div id="foot">
+
+
+
+
+	<table id="footer" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td class="menuarea">
+
+
+
+	      <div class="oson_footmenu_pwd">
+		<table cellpadding="0" cellspacing="0" class="oson_footmenu_pwd">
+		  <tr>
+		    <td class="passwd" colspan="1" rowspan="1"><a href="#" onclick="javascript:window.open('http://www.okasan-online.co.jp/support/help/jp_input.html','new','menubar=yes,toolbar=yes,resizable=yes,scrollbars=yes');" shape="rect" title="パスワードなどの入力方法について"><span>パスワードなどの入力方法について</span></a></td>
+		  </tr>
+		</table>
+	      </div>
+	      <table cellpadding="0" cellspacing="0" class="oson_footmenu">
+		<tr>
+		  <td class="financial" colspan="1" rowspan="1"><a href="#" onClick="javascript:window.open('http://www.okasan-online.co.jp/policy/important.html','new','menubar=yes,toolbar=yes,resizable=yes,scrollbars=yes');" shape="rect" title="重要事項の確認"><span>重要事項の確認</span></a></td>
+		  <td class="execution" colspan="1" rowspan="1"><a href="#" onClick="javascript:window.open('http://www.okasan-online.co.jp/policy/bestexecution.html','new','menubar=yes,toolbar=yes,resizable=yes,scrollbars=yes');" shape="rect" title="最良執行方針"><span>最良執行方針</span></a></td>
+		  <td class="unfair_trading" colspan="1" rowspan="1"><a href="#" onClick="javascript:window.open('http://www.okasan-online.co.jp/products/dealings/rule.html','new','menubar=yes,toolbar=yes,resizable=yes,scrollbars=yes');" shape="rect" title="不公正取引について"><span>不公正取引について</span></a></td>
+		  <td class="solicitation" colspan="1" rowspan="1"><a href="#" onClick="javascript:window.open('http://www.okasan-online.co.jp/policy/solicitation.html','new','menubar=yes,toolbar=yes,resizable=yes,scrollbars=yes');" shape="rect" title="投資勧誘方針"><span>投資勧誘方針</span></a></td>
+		  <td class="policy" colspan="1" rowspan="1"><a href="#" onClick="javascript:window.open('http://www.okasan-online.co.jp/policy/privacy.html','new','menubar=yes,toolbar=yes,resizable=yes,scrollbars=yes');" shape="rect" title="個人情報保護方針"><span>個人情報保護方針</span></a></td>
+		  <td class="risk" colspan="1" rowspan="1"><a href="#" onClick="javascript:window.open('http://www.okasan-online.co.jp/policy/risk.html','new','menubar=yes,toolbar=yes,resizable=yes,scrollbars=yes');" shape="rect" title="商品リスク・手数料等重要事項"><span>商品リスク・手数料等重要事項</span></a></td>
+		</tr>
+		<tr>
+		  <td class="name" colspan="6" rowspan="1">
+		    <span>商号等 : 岡三オンライン証券株式会社　金融商品取引業者　関東財務局長(金商)第52号　加入協会 : 日本証券業協会　一般社団法人 金融先物取引業協会</span>   </td>
+		</tr>
+	      </table>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td class="copyarea">
+	      <table class="copymenu" cellspacing="0" cellpadding="0">
+		<tr>
+		  <td class="copy"><span>All rights reserved.</span></td>
+		  <td class="about">
+		    <div class="about_copy">
+		      <a href="javascript:void(0)" title="著作権について" onclick="ShowSubWindow('https://member.okasan-online.co.jp/static_contents/web/html/tilefooter_copyright.html')"><span>著作権について</span></a></div></td>
+		</tr>
+	      </table>
+	    </td>
+	  </tr>
+
+	</table>
+	<!-- zxwebb01 -->
+
+      </div>
+
+    </div>
+  </body>
+</html>
