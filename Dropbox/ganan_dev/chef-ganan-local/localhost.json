@@ -1,0 +1,7 @@
+{
+    "run_list" : [
+	"gem",
+	"currency_logger"
+
+    ]
+}
